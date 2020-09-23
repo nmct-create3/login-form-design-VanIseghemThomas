@@ -1,7 +1,16 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
-
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+}
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -23,14 +32,15 @@
 */
 
 html {
+    color: #20223a;
+    background-color: #F5F6FA;
+
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: 'Inter', arial, sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
 }
 
 *,
@@ -53,7 +63,7 @@ html {
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -158,20 +168,28 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #4b93ff;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #4b93ff;
 }
 
+label{
+    display: block;
+}
+input{
+    display: block;
+    outline: none;
+    
+}
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
@@ -189,6 +207,7 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+    
 }
 
 /* size modifiers */
@@ -443,6 +462,14 @@ a:focus {
     ---
     Everything form related here
 */
+.c-form-field{
+
+}
+
+.c-form-field--option{
+    display: flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -451,10 +478,19 @@ a:focus {
 */
 
 .c-input {
-
+    font-family: 'Inter', sans-serif;    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 3px solid #E5E6E9;
+    padding: 11.8px;
+    border-radius: 3px;
 }
 
 .c-input:focus {
+    border: 1px solid rgb(51, 133, 255);
+    box-shadow: 0 0 3px 3px #3385ff4d; 
 }
 
 /*
@@ -464,7 +500,15 @@ a:focus {
 */
 
 .c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
 
+.c-label--option {
+    margin-bottom: 0px;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -480,25 +524,77 @@ a:focus {
 */
 
 .c-button {
-
+    width: 100%;
+    background-color: #2E77E6;
+    color: white;
+    font-weight: 600;
+    padding: 14.4px 0;
+    border-radius: 3px;
 }
 
 .c-button:hover {
-
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    background-color: #3385FF;
+    box-shadow: 0 0 3px 3px rgba(51, 133, 255, .49); 
 }
 
 .c-button:active {
-
+    background-color: #2E77E6;
 }
 
 .c-button--block {
 
 }
 
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__symbol{
+    display: block;
+    height: 100%;
+}
+
+.c-logo__symbolText{
+    fill: #20223A;
+}
+.c-logo__symbolInner{
+    fill: #3385FF;
+}
+.c-logo__symbolOuter{
+    fill: #1B4186;
+}
+
+.c-card{
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 3px;
+}
+
+.c-card__body{
+    padding: 48px;
+}
+
+.c-card__title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+    margin-bottom: 48px;
+}
+
+.c-card__footer{
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 24px 24px 0 24px;
+    border-top: 1px solid #E2E3E7;
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
